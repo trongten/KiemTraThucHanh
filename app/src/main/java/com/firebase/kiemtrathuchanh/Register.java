@@ -26,12 +26,13 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mAuth = FirebaseAuth.getInstance();
 
         EditText email = findViewById(R.id.regis_email);
         EditText password = findViewById(R.id.regis_pass);
         EditText repass = findViewById(R.id.regis_repass);
         Button btnRe = findViewById(R.id.btnregis);
-        TextView txtRegister = findViewById(R.id.txtlogin);
+        TextView txtLogin = findViewById(R.id.txtlogin);
 
         if(password.getText().toString().equalsIgnoreCase(repass.getText().toString())){
 
@@ -47,6 +48,16 @@ public class Register extends AppCompatActivity {
             Toast.makeText(Register.this, "Password ko trung failed.",
                     Toast.LENGTH_SHORT).show();
         }
+
+
+        txtLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(),MainActivity.class);
+                startActivity(i);
+            }
+        });
+
 
 
     }
