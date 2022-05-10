@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-//                            Intent i  = new Intent(getBaseContext(),Bussiness.class);
-//                            startActivity(i);
+                            Intent i  = new Intent(getBaseContext(),Bussines.class);
+                            startActivity(i);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
