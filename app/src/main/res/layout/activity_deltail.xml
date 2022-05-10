@@ -10,6 +10,8 @@
         android:id="@+id/view"
         android:layout_width="405dp"
         android:layout_height="126dp"
+        android:background="#ECE9E9"
+        android:backgroundTint="#E3E3E3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,11 +22,12 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.602" />
 
     <TextView
         android:id="@+id/textView2"
@@ -32,9 +35,10 @@
         android:layout_height="45dp"
         android:layout_marginEnd="28dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintVertical_bias="0.493" />
 </androidx.constraintlayout.widget.ConstraintLayout>

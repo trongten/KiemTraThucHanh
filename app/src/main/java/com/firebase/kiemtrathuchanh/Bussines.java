@@ -27,12 +27,14 @@ public class Bussines extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bussines);
+
         mDatabase = FirebaseDatabase.getInstance().getReference("KhoaHoc");
 
         list= new ArrayList<>();
         EditText txt = findViewById(R.id.editTextTextPersonName);
         EditText txt2 = findViewById(R.id.editTextTextPersonName2);
-        Button btn = findViewById(R.id.button2);
+        Button btn = findViewById(R.id.button);
+
 
         laydc(list);
 
@@ -45,12 +47,17 @@ public class Bussines extends AppCompatActivity {
                 list.add(a);
                 mDatabase.setValue(list);
                 list = new ArrayList<>();
-                laydc(list);
+               laydc(list);
                 updateui();
             }
         });
 
+
+
+
+
     }
+
 
     public void updateui(){
         ListView listView = (ListView) findViewById(R.id.idList);
@@ -59,15 +66,14 @@ public class Bussines extends AppCompatActivity {
 
     }
 
-
     public  void laydc(List<KhoaHoc> list){
 
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    KhoaHoc c = postSnapshot.getValue(KhoaHoc.class);
-                    list.add(c);
+                    KhoaHoc a= postSnapshot.getValue(KhoaHoc.class);
+                    list.add(a);
                 }
             }
 
@@ -79,6 +85,5 @@ public class Bussines extends AppCompatActivity {
             }
         });
     }
-
 
 }
